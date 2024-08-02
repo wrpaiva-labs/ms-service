@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: ms-service
+    labels:
+        app: ms-service
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: ms-service
+    template:
+        metadata:
+            labels:
+                app: ms-service
+        spec:
+            containers:
+                - name: ms-service
+                  image: ms-service:latest
+                  ports:
+                      - containerPort: 8081
+#                  env:
+#                      - name: QUARKUS_DATASOURCE_URL
+#                        value: jdbc:postgresql://postgres:5432/quarkus
+#                      - name: QUARKUS_DATASOURCE_USERNAME
+#                        value: quarkus
+#                      - name: QUARKUS_DATASOURCE_PASSWORD
+#                        value: quarkus
