@@ -24,7 +24,7 @@ dependencies {
     implementation("io.quarkus:quarkus-rest-client-jsonb")
     implementation("io.quarkus:quarkus-rest-jsonb")
     implementation("io.quarkus:quarkus-mongodb-panache")
-    implementation("io.quarkiverse.jnosql:quarkus-jnosql-document-mongodb:3.3.0")
+//    implementation("io.quarkiverse.jnosql:quarkus-jnosql-document-mongodb:3.3.0")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-rest")
     testImplementation("io.quarkus:quarkus-junit5")
