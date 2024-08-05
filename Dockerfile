@@ -12,9 +12,8 @@ RUN ./gradlew build -Dquarkus.native.enabled=true
 ## Copiar o arquivo compilado
 #COPY --from=build /app/target/ms-service-app/ms-service.jar /app/ms-service.jar
 #
-COPY --chown=185 build/quarkus-app/lib/ /deployments/lib/
-COPY --chown=185 build/quarkus-app/app/*.jar /deployments/
-COPY --chown=185 build/quarkus-app/app/ /app/
+
+COPY --from=build /ms-service.jar /app/ms-service.jar
 
 EXPOSE 8084
 CMD ["java", "-jar", "/app/ms-service.jar"]
