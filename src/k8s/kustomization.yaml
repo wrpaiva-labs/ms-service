@@ -7,4 +7,4 @@ resources:
 images:
   - name: ms-service
     newName: wrpaiva2607/ms-service
-    newTag: latest
+    newTag: sha

@@ -16,9 +16,9 @@ spec:
         spec:
             containers:
                 - name: ms-service
-                  image: ms-service:latest
+                  image: ms-service
                   ports:
-                      - containerPort: 8081
+                      - containerPort: 8084
 #                  env:
 #                      - name: QUARKUS_DATASOURCE_URL
 #                        value: jdbc:postgresql://postgres:5432/quarkus
