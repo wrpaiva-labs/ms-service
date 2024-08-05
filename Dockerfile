@@ -10,8 +10,8 @@ RUN ./gradlew build -Dquarkus.native.enabled=true
 #FROM eclipse-temurin:21-jre-alpine
 #WORKDIR /app
 ## Copiar o arquivo compilado
-#COPY --from=build /app/target/ms-service-app/ms-service.jar /app/ms-service.jar
-#
+# COPY --from=build /app/target/ms-service-app/ms-service.jar /app/ms-service.jar
+# teste
 
 COPY --from=build /ms-service.jar /app/ms-service.jar
 
