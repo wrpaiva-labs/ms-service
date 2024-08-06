@@ -4,7 +4,9 @@ WORKDIR /app
 RUN chown 1001 /app \
     && chmod "g+rwX" /app \
     && chown 1001:root /app
-COPY --from=build/quarkus-app/app /app/
+
+# Corrigindo: Adicione o destino para o COPY
+COPY --from=build /quarkus-app/app /app/
 
 EXPOSE 8084
 USER 1001
