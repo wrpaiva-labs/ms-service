@@ -1,14 +1,10 @@
 # Usando a imagem do OpenJDK 21
-FROM eclipse-temurin:21-jdk-alpine as build
-WORKDIR /app
-
-# Copiar o código fonte e compilar
-COPY . /app
-
-RUN chown 1001 /app \
-    && chmod "g+rwX" /app \
-    && chown 1001:root /app
-COPY --chown=1001:root build/*-runner /app/application
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.9
+WORKDIR /work/
+RUN chown 1001 /work \
+    && chmod "g+rwX" /work \
+    && chown 1001:root /work
+COPY --chown=1001:root build/*-runner /work/application
 
 EXPOSE 8084
 USER 1001
